@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  p ...a Twitter montior app that will hopefully do something cool one day.
+  form.form(action="/" method="GET")
+    //input#screen_name(type="text", placeholder="@cookieMonster" name="nameSearch")
+    //p and/or
+    input#keyword(type="text", placeholder="comma separated keywords", name="keySearch")
+    input#startBtn(type="submit", value="start feed")
+    //input#stopBtn(type="submit", value="stop feed")
+  hr
+  if search == ''
+    p No search terms defined
+  else
+    p Currently searching for #{search}
+  #local-tweet-container
+    ul.tweets
